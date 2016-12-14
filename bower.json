@@ -1,0 +1,27 @@
+{
+  "name": "shop.afi5.ru",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ocean"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "jGrowl": "jgrowl#^1.4.5",
+    "jquery.inputmask": "^3.3.3",
+    "magnific-popup": "^1.1.0",
+    "normalize-css": "^4.2.0",
+    "slick-carousel": "^1.6.0"
+  }
+}

@@ -1,0 +1,34 @@
+# Packages
+*.7z
+*.gz
+*.rar
+*.tar
+*.zip
+
+# Other
+Thumbs.db
+*.log
+
+# Idea
+/.idea/workspace.xml
+/.idea/tasks.xml
+
+# Folders
+node_modules
+bower_components
+dist
+
+# SubFolders
+src/css
+src/img-sprite/
+
+# Files
+src/img/sprite.png
+src/js/jquery.min.js
+src/js/libs.min.js
+
+
+
+
+
+

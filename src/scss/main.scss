@@ -1,0 +1,646 @@
+//@import '_reset';
+@import '_normalize';
+@import '_base';
+
+@import '_jquery-ui-slider';
+@import '_minishop2_default';
+@import '_msearch2_default';
+
+@import '_sprite';
+@include sprites($spritesheet-sprites);
+
+.bPhone {
+  margin: 15px 15px 0 0;
+  text-align: right;
+  //font-family: $font-family-extra;
+  &__callToAct {
+    //margin-left: auto;
+  }
+  &__num {
+    //display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    font-family: $font-family-extra;
+    font-size: 2.4rem;
+  }
+  &__btn {
+    margin-top: 5px;
+  }
+  &__callToAct {
+    margin-top: 5px;
+  }
+  &__workTime {
+    margin-top: 5px;
+    sup {
+      left: -0.2em;
+    }
+  }
+} // bPhone
+
+.bHeader {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    min-height: 155px;
+    background: url(../img/logo_bg.jpg) 60px 0 no-repeat;
+  }
+  &__logo {
+    //position: absolute;
+    //top: 15px;
+    //left: 15px;
+    margin: 15px 0 0 15px;
+  }
+  &__siteName {
+    position: absolute;
+    top: 15px;
+    left: 380px;
+    font-size: 3rem;
+    font-family: $font-family-extra;
+  }
+  &__siteDesc {
+    position: absolute;
+    top: 65px;
+    left: 380px;
+    font-size: 2.2rem;
+    font-family: $font-family-extra;
+  }
+} // bHeader
+
+.bMenu {
+  &__wrap {
+    height: 40px;
+    background: $btn-bg;
+    text-align: center;
+    z-index: 99;
+  }
+  &__list {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    //display: inline-block;
+    list-style: none;
+    text-decoration: none;
+  }
+  &__item a {
+    display: inline-block;
+    padding: 0 25px;
+    height: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 40px;
+    font-size: 1.8rem;
+    font-family: $font-family-extra;
+    //font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: $transition;
+  }
+  &__item a:hover {
+    background: $btn-hover-bg;
+    transition: $transition;
+  }
+  &__item.active a,
+  &__item.active a:hover {
+    background: $btn-hover-bg;
+    transition: $transition;
+  }
+} // bMenu
+
+.bSlider_bdForm {
+  &__wrap {
+    display: flex;
+    //display: table-row;
+  }
+}
+// bSlider_bdForm
+
+.bSlider {
+  $bSlider-width: round((790px / $wrap-dWidth) * $wrap-width);
+  $bSlider-height: 375px;
+  width: $bSlider-width;
+  height: $bSlider-height;
+  overflow: hidden;
+  //display: table-cell;
+  &__model {
+    position: relative;
+    height: $bSlider-height;
+  }
+  // Todo Responsive image ?
+  &__model__img {
+    display: inline-block;
+    height: auto;
+    height: $bSlider-height;
+    max-width: 100%;
+  }
+  &__model__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 125px;
+    background: rgba(#000, 0.6);
+    text-align: center;
+    color: #ffffff;
+    .d1 {
+      margin-top: 15px;
+      font-size: 2rem;
+    }
+    .d2 {
+      margin-top: 15px;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    top: 50%;
+    margin-top: -$arrow_hDiagonal; // vertical align
+  }
+  .slick-dots {
+    padding: 0 15px;
+  }
+  .slick-dots li button {
+    border: 1px solid #fff;
+    border-radius: 16px;
+    padding: 2px;
+  }
+} // bSlider
+
+.bdForm {
+  //display: table-cell;
+  flex: 1;
+  //width: $wrap-width - $bSlider-width;
+  padding: 0 50px;
+  background: $form-bg;
+  //background: radial-gradient(#000 8%,$form-bg 8%);
+  //background-size: 15px 15px;
+  background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.15), rgba(255,255,255, 0.15) 1px, transparent 1px, transparent 6px);
+  background-size: 8px 8px;
+  //animation: bscale 10s infinite linear;
+  &__wrap {
+    text-align: center;
+    color: #ffffff;
+  }
+  &__title {
+    padding-top: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  &__desc {
+    padding-top: 15px;
+  }
+  .bForm {
+    //margin: 0 auto;
+    padding-top: 20px;
+    width: 100%;
+    //width: 275px;
+  }
+  &__after {
+    padding: 25px 0 20px 0;
+  }
+} // bdForm
+.bPopup {
+  position: relative;
+  margin: 0 auto;
+  width: 380px;
+  .bdForm {
+    position: relative;
+    background-color: rgba($form-bg, 0.8);
+    &__title {
+      padding-top: 35px;
+      font-weight: normal;
+    }
+  }
+}
+
+
+.bTrigger {
+  &__wrap {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+    //align-items: center;
+    box-sizing: border-box;
+    padding: 20px 15px 20px 15px;
+  }
+  &__model {
+    $count: 5;
+    //$width: round(($wrap-width - ($count - 1)  * 30px) / $count);
+    //width: $width;
+    flex: 1;
+    padding: 0 20px;
+    text-align: center;
+    &__icon {
+      height: 70px;
+      line-height: 70px;
+      .icon {
+        vertical-align: middle;
+      }
+    }
+    &__title {
+      font-family: $font-family-extra;
+      font-size: 1.8rem;
+    }
+  }
+} // bTrigger
+
+.bCat {
+  //display: none;
+  //height: 300px;
+  //overflow: hidden;
+  &__wrap {
+    overflow: hidden;
+  }
+  &__block {
+    height: 580px;
+    padding: 0 15px;
+
+    box-sizing: content-box;
+    overflow: hidden;
+    &.slick-slider {
+      height: 610px;
+      overflow: visible;
+    }
+    &__in {
+      display: flex !important; // default block
+      flex-wrap: wrap;
+      //justify-content: space-around;
+      justify-content: space-between;
+      //margin-right: 15px;
+      //padding: 0 15px;
+    }
+
+    .slick-slide {
+      margin: 0 7.5px;
+    }
+    .slick-list {
+      margin: 0 -7.5px;
+    }
+  }
+  &__model {
+    $count: 5;
+    $width: round(($wrap-width - ($count + 1)  * 15px) / $count);
+    //box-sizing: border-box;
+    margin-bottom: 15px;
+    //width: $width;
+    //padding: 5px;
+    background: $btn-bg;
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 1px, transparent 1px, transparent 6px);
+    background-size: 8px 8px;
+    cursor: pointer;
+    transition: $transition;
+    &__img {
+      display: inline-block !important;
+      //display: none;
+      margin: 5px;
+      margin-bottom: 0;
+      width: $width - 10px;
+      height: $width - 10px;
+    }
+    &__title {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 5px;
+      width: $width;
+      height: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.4;
+      font-size: 1.6rem;
+      font-weight: normal;
+      font-family: $font-family-extra;
+      color: #ffffff;
+    }
+    &:hover {
+      background-color: $btn-hover-bg;
+      transition: $transition;
+    }
+  }
+} // bCat
+
+.bsCard {
+  //display: none;
+  //height: 300px;
+  //overflow: hidden;
+  &__wrap {
+    overflow: hidden;
+  }
+  &__block {
+    display: flex; // default block
+
+    //flex-wrap: wrap;
+    //justify-content: space-around;
+    //justify-content: space-between;
+    //padding: 0 15px;
+    height: 320px;
+    padding: 0 15px;
+    //overflow: hidden;
+    &.slick-slider {
+      display: block;
+      height: 350px;
+    }
+    &__in {
+    }
+  }
+  &__model {
+    $count: 5;
+    $width: round(($wrap-width - ($count + 1)  * 15px) / $count);
+    //box-sizing: border-box;
+    //flex: 1 1 $width;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: $width;
+    //padding: 5px;
+    background: $btn-bg;
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.1), rgba(255,255,255, 0.1) 1px, transparent 1px, transparent 6px);
+    background-size: 8px 8px;
+    cursor: pointer;
+    transition: $transition;
+    &__img {
+      display: inline-block !important;
+      //display: none;
+      margin: 5px;
+      margin-bottom: 0;
+      width: $width - 10px;
+      height: $width - 10px;
+    }
+    &__title {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 5px;
+      width: $width;
+      height: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.4;
+      font-size: 1.4rem;
+      font-weight: normal;
+      font-family: $font-family-extra;
+      color: #ffffff;
+    }
+    &__b {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      padding: 0 5px;
+    }
+    &__priceOld {
+      text-decoration: line-through;
+      //font-size: 1.4rem;
+    }
+    &__price {
+      font-size: 1.8rem;
+      color: #ffffff;
+      .rub {
+        border-color: #ffffff;
+      }
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      border-radius: 40px;
+      width: 42px;
+      height: 42px;
+      background-color: $i_hit;
+      text-align: center;
+      z-index: 10;
+      .icon {
+        //text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+        background-color: #666666;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        color: rgba(0,0,0,0.6);
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        color: #ffffff;
+      }
+    }
+    &-new &__icon {
+      background-color: $i_new;
+    }
+    &-hot &__icon {
+      background-color: $i_hot;
+    }
+    &:hover {
+      background-color: $btn-hover-bg;
+      transition: $transition;
+    }
+  }
+  // &__model
+  .bTitle__title {
+    //margin-bottom: 0;
+  }
+  &__filter {
+    position: absolute;
+    top: 45px;
+    left: 710px;
+    //padding: 5px 15px 15px 15px;
+    text-align: center;
+    &__link {
+      display: inline-block;
+      font-size: 1.8rem;
+      color: $link-color;
+      cursor: pointer;
+      &.active,
+      &:hover {
+        color: $link-hover-color;
+      }
+      &.active {
+        cursor: auto;
+        text-decoration: underline;
+      }
+    }
+  }
+} // bsCard
+
+.bFooter {
+  display: flex;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 15px 0;
+    border-top: 2px solid $primary-color;
+    background: none;
+  }
+  &__contacts {
+    flex: 1;
+    margin: 0 0 0 15px;
+    line-height: 1.5;
+  }
+  &__social {
+    flex: 1;
+    text-align: center;
+    &__link {
+      display: inline-block;
+      //border: 1px solid $primary-color;
+      //background: #ffffff;
+      font-family: $font-family-extra;
+      font-size: 1.8rem;
+      text-decoration: none;
+      span,
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      span {
+        margin-right: 15px;
+        text-decoration: underline;
+      }
+    }
+  }
+  .bPhone {
+    flex: 1;
+    margin-top: 0;
+    &__workTime {
+      display: none;
+    }
+  }
+} // bFooter
+
+.bCatalog {
+  &__wrap {
+    display: flex;
+  }
+  &__l {
+    $count: 5;
+    $bCatalog-width: round(($wrap-width - ($count + 1)  * 15px) / $count) + 15;
+    width: $bCatalog-width;
+  }
+  &__r {
+    flex: 1;
+    padding-left: 15px;
+  }
+  #mse2_results {
+    display: flex !important; // default block
+    flex-wrap: wrap;
+    //justify-content: space-between;
+  }
+}
+
+
+.msMiniCart {
+  position: absolute;
+  top: 0;
+  left: 680px;
+  box-sizing: border-box;
+  padding-left: 70px;
+  height: 60px;
+  width: 205px;
+  background: $btn-bg;
+  color: #ffffff;
+  transition: $transition;
+  cursor: pointer;
+  .icon-cart {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  &__title {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.8rem;
+  }
+  &__sum {
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    background-color: $btn-hover-bg;
+    transition: $transition;
+  }
+} // #msMiniCart
+
+.bCatMenu {
+  /*&__list {
+		padding-left: 15px;
+  }
+	&__item {
+		list-style: none;
+		a {
+			display: inline-block;
+			padding: 0 0 7px 0;
+			text-decoration: none;
+			font-size: 1.8rem;
+		}
+	}
+	&__sList {
+		padding-left: 15px;
+		//margin-top: -5px;
+			a {
+				font-size: 1.6rem;
+			}
+	}*/
+
+  &__item {
+    //display: inline-block;
+    list-style: none;
+    text-decoration: none;
+  }
+  &__item.parent > a:after {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    content: "";
+    border: 8px solid #fff;
+    border-width: 2px 2px 0 0;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+  }
+  &__item.parent.active > a:after {
+    top: 11px;
+    transform: rotate(135deg);
+  }
+  &__item a {
+    display: inline-block;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    padding: 0 20px 0 10px;
+    width: 220px;
+    height: 36px;
+    background: $btn-bg;
+    //text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 36px;
+    font-size: 1.8rem;
+    font-family: $font-family-extra;
+    //font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: $transition;
+  }
+  &__list &__item > a:hover,
+  &__list &__item.active > a,
+  &__list &__item.active > a:hover {
+    background: $btn-hover-bg;
+    transition: $transition;
+  }
+
+  &__sList &__item a {
+    padding: 0 10px;
+    background: $sub-menu;
+    color: $primary-color;
+  }
+
+  &__sList &__item a:hover,
+  &__sList &__item.active a,
+  &__sList &__item.active a:hover {
+    background: $sub-menu-active;
+    //color: #fff;
+    transition: $transition;
+  }
+
+}
+
+

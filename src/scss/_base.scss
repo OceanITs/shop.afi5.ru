@@ -1,0 +1,420 @@
+@import '_mixins';
+// Colors
+
+$primary-color:             #1a1a1a !default;
+$secondary-color:           #373a3c !default;
+$wrap-bg:                   #ffffff !default;
+
+$btn-bg:                    #9a4e1d !default;
+$btn-hover-bg:              #5f361a !default;
+$form-bg:                   #1c74a2 !default;
+$form-input-bg:             #ceeaf8 !default;
+
+$i-new:                     #f15a25 !default;
+$i-hot:                     #ec2020 !default;
+$i-hit:                     #1c74a2 !default;
+
+$link-color:           $btn-hover-bg !default;
+$link-hover-color:    $primary-color !default;
+
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+$sub-menu: #e7e7e7 !default;
+$sub-menu-active: #a9a9a9 !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$wrap-width: 1170px;
+$wrap-dWidth: 1170px;
+$body-bg:    #f6f6f6 !default;
+$body-color: $primary-color !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+
+
+$font-family-extra:      'Ledger', serif;
+$font-family-extra:      'Rubik', sans-serif;
+$font-family-extra:      'marmeladregular' , sans-serif;
+//$font-family-extra:      'marmelad-regular1' , sans-serif;
+//$font-family-extra:      'Marmelad' , sans-serif;
+$font-rouble:            'als_rublregular';
+
+
+// Font-size
+
+$font-size-root: 10px !default;
+
+$font-size-h1: 4rem !default;
+$font-size-h2: 3.2rem !default;
+$font-size-h3: 2.8rem !default;
+$font-size-h4: 2.4rem !default;
+$font-size-h5: 2rem !default;
+$font-size-h6: 1.6rem !default;
+
+$line-height-base: 1.5 !default;
+
+// Transition
+$transition: all 0.3s ease-out;
+
+@include font-face('marmeladregular', '../fonts/marmelad-regular/marmelad-regular', normal, normal);
+@include font-face('als_rublregular', '../fonts/rouble/rouble');
+
+// HTML
+@charset "utf-8";
+*,
+:before,
+:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-size: 10px;
+}
+body {
+	position: relative;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	min-width: $wrap-width;
+	//min-height: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	//background: $body-bg;
+	line-height: $line-height-base;
+	font: 1.6rem $font-family-base;
+	color: $body-color;
+	background: linear-gradient(top, #ffffff, #f5f5f5);
+	//background: url(http://griddle.it/1170-12-30) repeat-y center top;
+	background-attachment: fixed;
+}
+fieldset {
+	border: none;
+}
+
+
+// Wrap
+.main-wrap {
+	flex: 1;
+	margin: 0 auto;
+	width: $wrap-width;
+	background: $wrap-bg;
+	//overflow: hidden;
+}
+@-ms-viewport{
+	//width: 1900px;
+}
+@media (min-width: 1200px) {
+	.main-wrap {
+		//width: $wrap-width;
+	}
+	@-ms-viewport{
+		width: $wrap-width;
+	}
+	//$wrap-width: 940px;
+}
+.main-wrap {
+	//width: $wrap-width;
+}
+@-ms-viewport{
+	width: $wrap-width;
+}
+.wrap {
+	position: relative;
+	margin: 0 auto;
+	width: $wrap-width;
+	background-color: $wrap-bg;
+}
+
+
+// Align
+
+.al { text-align: left !important;}
+.ar { text-align: right !important; }
+.ac { text-align: center !important; }
+.aj { text-align: justify !important; }
+
+
+// Add-on
+
+.hide { display: none; }
+.pr { position: relative; }
+.cb { clear: both; }
+.bold, b, strong { font-weight: bold; }
+.icon { display: inline-block; }
+s { text-decoration: none; }
+i { font-style: normal; }
+ul { margin:0;
+	padding: 0;}
+
+
+
+
+.rub {
+	font-family: $font-rouble;
+	font-size: 1.05em;
+}
+
+// H1-H6
+
+h1,.h1 { font-size: $font-size-h1; }
+h2,.h2 { font-size: $font-size-h2; }
+h3,.h3 { font-size: $font-size-h3; }
+h4,.h4 { font-size: $font-size-h4; }
+h5,.h5 { font-size: $font-size-h5; }
+h6,.h6 { font-size: $font-size-h6; }
+
+
+// Links
+
+a { color: $primary-color; }
+a:hover {
+	color: $btn-hover-bg;
+	text-decoration: none;
+}
+
+
+// BTN
+button {
+	border: none;
+}
+.btn {
+	position: relative;
+	display: inline-block;
+	border: none;
+	padding: 7px 25px;
+	min-height: 40px;
+	background: $btn-bg;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	font-family: $font-family-extra;
+	color: #fff;
+	white-space: nowrap;
+	cursor: pointer;
+	z-index: 1;
+	transition: $transition;
+	overflow: hidden;
+	&:hover {
+		background: $btn-hover-bg;
+		transition: $transition;
+	}
+}
+/*.btn:hover {
+	background: $btn-hover-bg;
+	transition: $transition;
+}*/
+
+// Slick
+
+$arrow_size: 34px;
+$arrow_hDiagonal: round($arrow_size * 1.415 / 2); // halfDiagonal, sqrt(2)
+$arrow_offset: round($arrow_size * 0.22); // about
+
+.slick-prev,
+.slick-next {
+	display: inline-block;
+	position: absolute;
+	top: -65px;
+	border: 2px solid $btn-bg;
+	border-width: 0 0 2px 2px;
+	padding: 0;
+	width: $arrow_size;
+	height: $arrow_size;
+	background: none;
+	transition: 0.2s;
+	z-index: 100;
+	cursor: pointer;
+	transition: $transition;
+	&:hover {
+		border-color: $btn-hover-bg;
+		transition: $transition;
+	}
+}
+.slick-prev {
+	left: 15px;
+	margin-left: $arrow_offset;
+	transform:rotate(45deg);
+}
+.slick-next {
+	right: 15px;
+	margin-right: $arrow_offset;
+	transform:rotate(225deg);
+}
+
+.slick-dots
+{
+	display: block;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 15px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	text-align: left;
+	li
+	{
+		display: inline-block;
+		&.slick-active button,
+		&.slick-active button:hover{
+			&:before {
+				background: $btn-hover-bg;
+				cursor: auto;
+			}
+		}
+		button {
+			content: "";
+			margin: 0 5px;
+			border: 1px solid $btn-hover-bg;
+			border: 1px solid $primary-color;
+			border-radius: 18px;
+			padding: 3px;
+			background: #fff;
+			&:before {
+				content: '';
+				display: block;
+				border-radius: 10px;
+				width: 10px;
+				height: 10px;
+				opacity: 0.8;
+				transition: $transition;
+			}
+			&:hover {
+				&:before {
+					background: $btn-bg;
+					cursor: pointer;
+					transition: $transition;
+				}
+			}
+		}
+	}
+}
+
+// magnificPopup
+.mfp-close-btn-in .mfp-close {
+	color: #ffffff;
+}
+
+// Title
+
+.bTitle {
+	text-align: center;
+	&__title {
+		display: inline-block;
+		margin: 30px auto;
+		font-family: $font-family-extra;
+		font-weight: normal;
+		//font-family: 'Open Sans', sans-serif;
+		font-size: 30px;
+	}
+}
+
+.sTitle {
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+}
+
+
+// Form
+
+form {
+	position: relative;
+	margin: 0 auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: $gray-light;
+	text-overflow: ellipsis;
+	opacity: 1;
+}
+
+input[type=text],
+textarea {
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	padding: 12px 15px 10px 15px;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+	height: 40px;
+	background: $form-input-bg;
+	text-align: center;
+	//font-family: Arial;
+	font-size: 1.6rem;
+	//color: #0b2438;
+	transition: $transition;
+}
+textarea {
+	margin: 0;
+	height: 80px;
+	vertical-align: top; /* fix extra space under textarea (differs along browsers) */
+}
+input[type=text].error,
+textarea.error {
+	background: #e8c8c8;
+}
+input[type=text]:hover,
+textarea:hover {
+	background: #fff;
+	transition: $transition;
+}
+.btn-submit {
+	padding: 0;
+	width: 100%;
+	height: 40px;
+}
+
+/*
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+*/
+
+
+.toTop {
+	text-decoration: none;
+	position: fixed;
+	display: block;
+	bottom: 15px;
+	right: 15px;
+	margin: 0;
+	padding: 6px 12px 10px 12px;
+	transform: rotate(-90deg);
+	background: $primary-color;
+	color: #fff;
+	/* border-radius: 3px; */
+	text-align: center;
+	font-size: 24px;
+	transition: $transition;
+	cursor: pointer;
+	opacity: 0.6;
+	z-index: 1000;
+}
+
+.toTop:hover {
+	color: #fff;
+	opacity: 1 !important;
+}
+
