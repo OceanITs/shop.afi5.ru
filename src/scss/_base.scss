@@ -9,6 +9,9 @@ $btn-bg:                    #9a4e1d !default;
 $btn-hover-bg:              #5f361a !default;
 $form-bg:                   #1c74a2 !default;
 $form-input-bg:             #ceeaf8 !default;
+$form-input-inactive-bg:    #dddddd !default;
+
+$slider-color: #1c74a2 !default;
 
 $i-new:                     #f15a25 !default;
 $i-hot:                     #ec2020 !default;
@@ -204,7 +207,7 @@ button {
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 1.8rem;
+	font-size: 1.7rem;
 	font-family: $font-family-extra;
 	color: #fff;
 	white-space: nowrap;
@@ -317,13 +320,10 @@ $arrow_offset: round($arrow_size * 0.22); // about
 
 .bTitle {
 	text-align: center;
-	&__title {
-		display: inline-block;
-		margin: 30px auto;
-		font-family: $font-family-extra;
-		font-weight: normal;
-		//font-family: 'Open Sans', sans-serif;
-		font-size: 30px;
+	.title {
+		margin-top: 10px;
+		font-family: $font-family-base;
+		font-size: 3.2rem;
 	}
 }
 

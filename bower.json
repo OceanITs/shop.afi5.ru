@@ -22,6 +22,7 @@
     "jquery.inputmask": "^3.3.3",
     "magnific-popup": "^1.1.0",
     "normalize-css": "^4.2.0",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "wow": "^1.1.2"
   }
 }
